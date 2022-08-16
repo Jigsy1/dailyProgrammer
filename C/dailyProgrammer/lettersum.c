@@ -1,8 +1,16 @@
-/*	lettersum.c
+/*
 
-	For: https://old.reddit.com/r/dailyprogrammer/comments/onfehl/20210719_challenge_399_easy_letter_value_sum/
+lettersum.c by Jigsy (https://github.com/Jigsy1) released under The Unlicense.
 
-	Compiled under TCC.
+For: https://old.reddit.com/r/dailyprogrammer/comments/onfehl/20210719_challenge_399_easy_letter_value_sum/
+
+Compiled on Windows 8.1 using TCC available from: https://bellard.org/tcc/
+
+How to:
+----------
+...> tcc -c lettersum.c
+...> tcc -run lettersum.o
+
 */
 
 #include <ctype.h>
@@ -13,11 +21,11 @@ int getAlphaNumber(char thisLetter) {
 	if (!isalpha(thisLetter)) {
 		return 0;
 	}
-	char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 	if (isupper(thisLetter)) {
 		thisLetter = tolower(thisLetter);
 	}
-	int thisLoop = 0, thisPos = 0;
+	char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+	int thisLoop, thisPos = 0;
 	for (thisLoop = 0; thisLoop <= strlen(alphabet); thisLoop++) {
 		if (thisLetter == alphabet[thisLoop]) {
 			thisPos = (thisLoop + 1);
@@ -27,7 +35,7 @@ int getAlphaNumber(char thisLetter) {
 	return thisPos;
 }
 int lettersum(char *thisString) {
-	int thisLoop = 0, thisSum = 0;
+	int thisLoop, thisSum = 0;
 	for (thisLoop = 0; thisLoop <= strlen(thisString); thisLoop++) {
 		thisSum += getAlphaNumber(thisString[thisLoop]);
 	}
@@ -36,24 +44,26 @@ int lettersum(char *thisString) {
 
 int main() {
 	char string1[] = "";
-	printf("%s = %d\n", string1, lettersum(string1));
+	printf("%s = %d\n", string1, lettersum(string1)); // Should be: 0
 	char string2[] = "a";
-	printf("%s = %d\n", string2, lettersum(string2));
+	printf("%s = %d\n", string2, lettersum(string2)); // Should be: 1
 	char string3[] = "z";
-	printf("%s = %d\n", string3, lettersum(string3));
+	printf("%s = %d\n", string3, lettersum(string3)); // Should be: 26
 	char string4[] = "cab";
-	printf("%s = %d\n", string4, lettersum(string4));
+	printf("%s = %d\n", string4, lettersum(string4)); // Should be: 6
 	char string5[] = "excellent";
-	printf("%s = %d\n", string5, lettersum(string5));
+	printf("%s = %d\n", string5, lettersum(string5)); // Should be: 100
 	char string6[] = "microspectrophotometries";
-	printf("%s = %d\n", string6, lettersum(string6));
-	// Own entries below:
+	printf("%s = %d\n", string6, lettersum(string6)); // Should be: 317
+	// My own entries below:
 	char string7[] = "antidisestablishmentarianism";
 	printf("%s = %d\n", string7, lettersum(string7));
 	char string8[] = "pneumonoultramicroscopicsilicovolcanoconiosis";
 	printf("%s = %d\n", string8, lettersum(string8));
 	char string9[] = "floccinaucinihilipilification";
 	printf("%s = %d\n", string9, lettersum(string9));
+	char string10[] = "xylophone";
+	printf("%s = %d\n", string10, lettersum(string10));
 }
 
 // EOF
