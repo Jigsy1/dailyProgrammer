@@ -1,17 +1,17 @@
 /*
-
-lettersum.c by Jigsy (https://github.com/Jigsy1) released under The Unlicense.
-
-For: https://old.reddit.com/r/dailyprogrammer/comments/onfehl/20210719_challenge_399_easy_letter_value_sum/
-
-Compiled on Windows 8.1 using TCC available from: https://bellard.org/tcc/
-
-How to:
-----------
-...> tcc -c lettersum.c
-...> tcc -run lettersum.o
-
-*/
+ *
+ * lettersum.c by Jigsy (https://github.com/Jigsy1) released under The Unlicense.
+ *
+ * For: https://old.reddit.com/r/dailyprogrammer/comments/onfehl/20210719_challenge_399_easy_letter_value_sum/
+ *
+ * Compiled on Windows 8.1 using TCC available from: https://bellard.org/tcc/
+ *
+ * How to:
+ * ----------
+ * ...> tcc -c lettersum.c
+ * ...> tcc -run lettersum.o
+ *
+ */
 
 #include <ctype.h>
 #include <stdio.h>
@@ -28,8 +28,7 @@ int getAlphaNumber(char thisLetter) {
 	int thisLoop, thisPos = 0;
 	for (thisLoop = 0; thisLoop <= strlen(alphabet); thisLoop++) {
 		if (thisLetter == alphabet[thisLoop]) {
-			thisPos = (thisLoop + 1);
-			break;
+			return (thisLoop + 1);
 		}
 	}
 	return thisPos;
