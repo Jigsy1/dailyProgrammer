@@ -8,8 +8,8 @@
  *
  * How to:
  * ----------
- * ...> tcc -c lettersum.c
- * ...> tcc -run lettersum.o
+ * ...> tcc -c isISBN.c
+ * ...> tcc -run isISBN.o
  *
  */
 
