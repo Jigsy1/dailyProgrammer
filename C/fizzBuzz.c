@@ -12,31 +12,31 @@
 
 #include <stdio.h>
 
-#define buzz "Buzz"
-#define fizz "Fizz"
-#define fizzBuzz "Fizz Buzz"
+#define BUZZ "Buzz"
+#define FIZZ "Fizz"
+#define FIZZ_BUZZ "Fizz Buzz"
 
-int main() {
+int main(void) {
 	int thisLoop;
 	for (thisLoop = 1; thisLoop <= 100; thisLoop++) {
 		if (thisLoop % 5 == 0 && thisLoop % 3 == 0) {
-			printf("%s, ", fizzBuzz);
+			printf("%s, ", FIZZ_BUZZ);
 			continue;
 		}
 		else if (thisLoop % 5 == 0) {
-			printf("%s, ", buzz);
+			printf("%s, ", BUZZ);
 			continue;
 		}
 		else if (thisLoop % 3 == 0) {
-			printf("%s, ", fizz);
+			printf("%s, ", FIZZ);
 			continue;
 		}
 		else {
 			printf("%d, ", thisLoop);
 		}
-		// The output symmetry is quite interesting.
+		// `-> The output symmetry is quite interesting.
 	}
-	return 1;
+	return 0;
 }
 
 // EOF
