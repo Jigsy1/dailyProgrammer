@@ -1,5 +1,4 @@
 /*
- *
  * lettersum.c by Jigsy (https://github.com/Jigsy1) released under The Unlicense.
  *
  * For: https://old.reddit.com/r/dailyprogrammer/comments/onfehl/20210719_challenge_399_easy_letter_value_sum/
@@ -41,20 +40,20 @@ int lettersum(char *thisString) {
 	return thisSum;
 }
 
-int main() {
+int main(void) {
 	char string1[] = "";
-	printf("%s = %d\n", string1, lettersum(string1)); // Should be: 0
+	printf("%s = %d\n", string1, lettersum(string1)); // -> Should return: 0
 	char string2[] = "a";
-	printf("%s = %d\n", string2, lettersum(string2)); // Should be: 1
+	printf("%s = %d\n", string2, lettersum(string2)); // -> Should return: 1
 	char string3[] = "z";
-	printf("%s = %d\n", string3, lettersum(string3)); // Should be: 26
+	printf("%s = %d\n", string3, lettersum(string3)); // -> Should return: 26
 	char string4[] = "cab";
-	printf("%s = %d\n", string4, lettersum(string4)); // Should be: 6
+	printf("%s = %d\n", string4, lettersum(string4)); // -> Should return: 6
 	char string5[] = "excellent";
-	printf("%s = %d\n", string5, lettersum(string5)); // Should be: 100
+	printf("%s = %d\n", string5, lettersum(string5)); // -> Should return: 100
 	char string6[] = "microspectrophotometries";
-	printf("%s = %d\n", string6, lettersum(string6)); // Should be: 317
-	// My own entries below:
+	printf("%s = %d\n", string6, lettersum(string6)); // -> Should return: 317
+	// ,-> My own entries below:
 	char string7[] = "antidisestablishmentarianism";
 	printf("%s = %d\n", string7, lettersum(string7));
 	char string8[] = "pneumonoultramicroscopicsilicovolcanoconiosis";
@@ -63,6 +62,8 @@ int main() {
 	printf("%s = %d\n", string9, lettersum(string9));
 	char string10[] = "xylophone";
 	printf("%s = %d\n", string10, lettersum(string10));
+
+	return 0;
 }
 
 // EOF
