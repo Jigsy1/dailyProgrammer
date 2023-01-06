@@ -11,7 +11,7 @@ END_OF_MAP = "End of /MAP"
 # Tree
 
 servers = {
-        # "child": "parent"[,] - , isn't required for the final entry obviously.
+        # ,-> "child": "parent"[,] - , isn't required for the final entry obviously.
         "angelicarogner.localhost": "towaherschel.localhost",
         "titarussell.localhost": "angelicarogner.localhost",
         "estellebright.localhost": "titarussell.localhost",
@@ -66,7 +66,7 @@ servers = {
         "gracelynn.localhost": "tioplato.localhost",
         "eliemacdowell.localhost": "tioplato.localhost",
         "mariabellcrois.localhost": "eliemacdowell.localhost",
-        # A few new (randomly placed?) entries!
+        # ,-> A few new (randomly placed?) entries!
         "ferridaalfayed.localhost": "fieclaussell.localhost",
         "risettetwinings.localhost": "ferridaalfayed.localhost",
         "agnesclaudel.localhost": "ferridaalfayed.localhost",
@@ -94,7 +94,7 @@ def makePrettyString(string, position):
         while stringLoop < len(position):
                 tempNumber = int(position[stringLoop])
                 if tempNumber != -1:
-                        # This next line below can possibly be commented out. I'm not 100% sure.
+                        # ,-> This next line below can possibly be commented out. I'm not 100% sure.
                         if string[tempNumber] != " ":
                                 if string[tempNumber] != "`":
                                         newString[tempNumber] = " "
@@ -111,7 +111,7 @@ def recurseMap(recursion, progeny, parentName, position):
                         newProgeny = countProgeny(child)
                         string = "| " * recursion
                         if newProgeny > 0:
-                                # This should probably be oldProgeny(?); but if it ain't fixed, don't broke it!
+                                # ,-> This - next one - should probably be oldProgeny(?); but if it ain't fixed, don't broke it!
                                 if loop != progeny:
                                         string = string + "|"
                                 else:
@@ -123,9 +123,9 @@ def recurseMap(recursion, progeny, parentName, position):
                                         string = string + "`"
                         if string.rfind("`") != -1:
                                 position = position + " " + str(string.rfind("`"))
-                                # "Why didn't you just make a list to start with?"
-                                #       Because it didn't return the string in the manner I needed it in order to get this to work correctly.
                         tempPosition = list(position.split(" "))
+                        # Q. "Why didn't you just make a list to start with?"
+                        # A. Because it didn't return the string in the manner I needed it in order to get this to work correctly.
                         string = makePrettyString(string, tempPosition) + "-" + child
                         print(string)
                         if progeny > 0:
@@ -135,7 +135,7 @@ def showMaps(ourServer):
         """Print the entire map tree from a specified starting point."""
         print(ourServer)
         recurseMap(0, countProgeny(ourServer), ourServer, "-1")
-        # DO NOT REMOVE THE "-1"!
+        # `-> DO NOT REMOVE THE "-1"!
         print(END_OF_MAP)
 
 def main():
