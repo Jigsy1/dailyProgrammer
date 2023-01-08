@@ -22,7 +22,7 @@ STR_LEN = len(CHAR_MAP)
 # `-> And 4^4 is about 256, so that should be enough for this demo.
 
 breakFlag = []
-# `-> Do not add anything to this.
+# `-> DO NOT ADD ANYTHING TO THIS!
 string = list(CHAR_MAP[0] * STR_LEN)
 
 def rotateChar(stringIndex, mapIndex, again):
@@ -35,8 +35,9 @@ def rotateChar(stringIndex, mapIndex, again):
                         rotateChar(newIndex, (tempIndex + 1), 0)
                 else:
                         # ,-> As I can't find any other way to end the recursion loop as "return" doesn't seem to be
-                        #       doing anything, and break doesn't work outside of a loop. And Python doesn't have goto (Seriously!?)
-                        #       we'll just set a hacky flag and stop the loop that way.
+                        # ¦->  doing anything, and "break" doesn't work outside of a loop... and Python doesn't have "goto"
+                        # ¦->  (Seriously!? goto is useful in some cases! (Like this one! >_<))
+                        # ¦->  we'll just set a hacky flag and stop the loop that way.
                         breakFlag.append('1')
                         print("\nEnd.")
         string[stringIndex] = CHAR_MAP[mapIndex]
@@ -47,7 +48,7 @@ def rotateChar(stringIndex, mapIndex, again):
 
 def main():
         rotateChar(0, 0, 1)
-        # `-> Start at 0, 1st character ('a', 0 in array), and rotate again.
+        # `-> Start at 0, from the 1st character ('a') which is 0 in arrayspeak, and rotate again.
 
 if __name__ == "__main__":
 	main()
