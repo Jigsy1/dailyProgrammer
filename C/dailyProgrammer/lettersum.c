@@ -16,6 +16,11 @@
 #include <stdio.h>
 #include <string.h>
 
+int getAlphaNumber(char thisLetter);
+int lettersum(char *thisString);
+
+/* END OF PROTOTYPES */
+
 int getAlphaNumber(char thisLetter) {
 	if (!isalpha(thisLetter)) {
 		return 0;
@@ -23,7 +28,7 @@ int getAlphaNumber(char thisLetter) {
 	if (isupper(thisLetter)) {
 		thisLetter = tolower(thisLetter);
 	}
-	char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+	const char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
 	int thisLoop, thisPos = 0;
 	for (thisLoop = 0; thisLoop <= strlen(alphabet); thisLoop++) {
 		if (thisLetter == alphabet[thisLoop]) {
@@ -42,17 +47,18 @@ int lettersum(char *thisString) {
 
 int main(void) {
 	char string1[] = "";
-	printf("%s = %d\n", string1, lettersum(string1)); // -> Should return: 0
+	printf("%s = %d\n", string1, lettersum(string1));	// -> Should return: 0
 	char string2[] = "a";
-	printf("%s = %d\n", string2, lettersum(string2)); // -> Should return: 1
+	printf("%s = %d\n", string2, lettersum(string2));	// -> Should return: 1
 	char string3[] = "z";
-	printf("%s = %d\n", string3, lettersum(string3)); // -> Should return: 26
+	printf("%s = %d\n", string3, lettersum(string3));	// -> Should return: 26
 	char string4[] = "cab";
-	printf("%s = %d\n", string4, lettersum(string4)); // -> Should return: 6
+	printf("%s = %d\n", string4, lettersum(string4));	// -> Should return: 6
 	char string5[] = "excellent";
-	printf("%s = %d\n", string5, lettersum(string5)); // -> Should return: 100
+	printf("%s = %d\n", string5, lettersum(string5));	// -> Should return: 100
 	char string6[] = "microspectrophotometries";
-	printf("%s = %d\n", string6, lettersum(string6)); // -> Should return: 317
+	printf("%s = %d\n", string6, lettersum(string6));	// -> Should return: 317
+
 	// ,-> My own entries below:
 	char string7[] = "antidisestablishmentarianism";
 	printf("%s = %d\n", string7, lettersum(string7));
