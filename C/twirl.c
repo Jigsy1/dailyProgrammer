@@ -20,27 +20,16 @@
 // `-> 500 is equal to 0.5s on Windows.
 
 int main(void) {
-	int twirlCount = 1;
 	for (;;) {
 		// `-> Infinite loop.
-		switch(twirlCount) {
-			case 1:
-				printf("\b|");
-				twirlCount += 1;
-				Sleep(SLEEP_TIME);
-			case 2:
-				printf("\b/");
-				twirlCount += 1;
-				Sleep(SLEEP_TIME);
-			case 3:
-				printf("\b-");
-				twirlCount += 1;
-				Sleep(SLEEP_TIME);
-			case 4:
-				printf("\b\\");
-				twirlCount = 1;		// -> Reset.
-				Sleep(SLEEP_TIME);
-		}
+		printf("\b|");
+		Sleep(SLEEP_TIME);
+		printf("\b/");
+		Sleep(SLEEP_TIME);
+		printf("\b-");
+		Sleep(SLEEP_TIME);
+		printf("\b\\");
+		Sleep(SLEEP_TIME);
 	}
 	return 0;
 }

@@ -23,17 +23,15 @@ int main(void) {
 			printf("%s, ", FIZZ_BUZZ);
 			continue;
 		}
-		else if (thisLoop % 5 == 0) {
+		if (thisLoop % 5 == 0) {
 			printf("%s, ", BUZZ);
 			continue;
 		}
-		else if (thisLoop % 3 == 0) {
+		if (thisLoop % 3 == 0) {
 			printf("%s, ", FIZZ);
 			continue;
 		}
-		else {
-			printf("%d, ", thisLoop);
-		}
+		printf("%d, ", thisLoop);
 		// `-> The output symmetry is quite interesting.
 	}
 	return 0;
