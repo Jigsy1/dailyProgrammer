@@ -2,15 +2,16 @@
  * brute.c by Jigsy (https://github.com/Jigsy1) released under the Unlicense.
  *
  * Compiled on Windows 8.1 using TCC available from: https://bellard.org/tcc/
+ *   And using Pelles C available from: http://www.smorgasbordet.com/pellesc/
  *
  * How to:
  * ----------
- * ...> tcc -c fizzBuzz.c
- * ...> tcc -run fizzBuzz.o
+ * ...> tcc -c brute.c
+ * ...> tcc -run brute.o
  *
  *
- * Note: 26^4 (or any number higher than four will not work). It'll get to about eomb and just end.
- *	 That said, this is only a demo.
+ * Note: 26^4 - or any number higher than four will not work - on TCC. It'll get to about eomb and just end.
+ *	 However, compiling under Pelles had no problems getting to zzzz.
  */
 
 #include <stdio.h>
