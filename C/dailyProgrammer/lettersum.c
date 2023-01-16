@@ -16,6 +16,8 @@
 #include <stdio.h>
 #include <string.h>
 
+/* START OF PROTOTYPES */
+
 int getAlphaNumber(char thisLetter);
 int lettersum(char *thisString);
 
@@ -28,7 +30,7 @@ int getAlphaNumber(char thisLetter) {
 	if (isupper(thisLetter)) {
 		thisLetter = tolower(thisLetter);
 	}
-	const char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
+	const char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 	int thisLoop, thisPos = 0;
 	for (thisLoop = 0; thisLoop <= strlen(alphabet); thisLoop++) {
 		if (thisLetter == alphabet[thisLoop]) {
@@ -60,14 +62,14 @@ int main(void) {
 	printf("%s = %d\n", string6, lettersum(string6));	// -> Should return: 317
 
 	// ,-> My own entries below:
-	char string7[] = "antidisestablishmentarianism";
+	char string7[] = "antidisestablishmentarianism";	// -> Should return: ?
 	printf("%s = %d\n", string7, lettersum(string7));
-	char string8[] = "pneumonoultramicroscopicsilicovolcanoconiosis";
+	char string8[] = "pneumonoultramicroscopicsilicovolcanoconiosis";	// -> Should return: ?
 	printf("%s = %d\n", string8, lettersum(string8));
-	char string9[] = "floccinaucinihilipilification";
+	char string9[] = "floccinaucinihilipilification";	// -> Should return: ?
 	printf("%s = %d\n", string9, lettersum(string9));
 	char string10[] = "xylophone";
-	printf("%s = %d\n", string10, lettersum(string10));
+	printf("%s = %d\n", string10, lettersum(string10));	// -> Should return: ?
 
 	return 0;
 }
