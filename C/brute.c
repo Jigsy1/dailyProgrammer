@@ -1,6 +1,8 @@
 /*
  * brute.c (Rev.2) by Jigsy (https://github.com/Jigsy1) released under the Unlicense.
  *
+ * Just a demo of looping through letter(s). aaaa->baaa->caaa->...->yzzz->zzzz
+ *
  * Compiled on Windows 8.1 using TCC available from: https://bellard.org/tcc/
  *
  * How to:
