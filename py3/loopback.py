@@ -6,7 +6,7 @@ import socket
 
 def accept_connection(client, address):
     print("Accepted: {}".format(client))
-    while 1:
+    while True:
         data = client.recv(4096).decode("UTF-8")
         if not data:
             break
