@@ -1,4 +1,4 @@
-# loopback.py
+# loopback.py by Jigsy (https://github.com/Jigsy1) released under the Unlicense.
 
 from _thread import *
 
